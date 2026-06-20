@@ -1,27 +1,124 @@
-Logo Internet Card Agency ✓ ☰
-হোম কার্ড কিনুন অর্ডার ফর্ম
-অর্ডার ফর্ম
-দেশ, প্যাকেজ এবং WhatsApp নম্বরের শেষ ৪ ডিজিট দিয়ে অর্ডার করুন
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <!-- ================= Order Page SEO ================= -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>অর্ডার ফর্ম | Internet Card Agency</title>
+  <meta name="description" content="Internet Card Agency WhatsApp order form.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
 
-গুরুত্বপূর্ণ নির্দেশনা
-প্রথমে পেমেন্ট সম্পন্ন করে তারপর ফর্মটি পূরণ করুন।
-ফর্ম submit করলে WhatsApp-এ অর্ডার মেসেজ তৈরি হবে।
-অর্ডার confirm হলে দ্রুত আপনার কার্ড ডেলিভারি করা হবে।
-আপনার নাম (optional) 
-আপনার নাম লিখুন
-আপনার দেশ * 
-দেশ নির্বাচন করুন
-প্যাকেজ নির্বাচন করুন * 
-প্যাকেজ নির্বাচন করুন
-প্যাকেজ নির্বাচন করলে মূল্য দেখাবে
-WhatsApp নম্বরের শেষ ৪ ডিজিট * 
-যেমন: 1234
-WhatsApp এ অর্ডার পাঠান
-Internet Card Agency ✓
-বিশ্বস্ত ইন্টারনেট স্ক্র্যাচ কার্ড সার্ভিস প্রদানকারী।
+<!-- ================= Header/Menu ================= -->
+<header class="header">
+  <div class="container nav">
+    <a class="brand" href="index.html">
+      <img src="assets/images/logo.png" class="logo" alt="Logo">
+      <span>Internet Card Agency <span class="verify-dot">✓</span></span>
+    </a>
 
-Quick Links
-হোম কার্ড কিনুন
-Support
-WhatsApp Support Facebook Page
-© 2026 Internet Card Agency.
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+    <nav class="menu">
+      <a href="index.html">হোম</a>
+      <a href="recharge-card.html">কার্ড কিনুন</a>
+      <a href="order.html">অর্ডার ফর্ম</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ================= Page Title ================= -->
+<section class="page-hero">
+  <div class="container">
+    <h1>অর্ডার ফর্ম</h1>
+    <p>দেশ, প্যাকেজ এবং WhatsApp নম্বরের শেষ ৪ ডিজিট দিয়ে অর্ডার করুন</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+
+    <!-- ================= Important Instruction ================= -->
+    <div class="contact-box" style="margin-bottom:25px">
+      <h2>গুরুত্বপূর্ণ নির্দেশনা</h2>
+      <ul class="instruction-list">
+        <li>প্রথমে পেমেন্ট সম্পন্ন করে তারপর ফর্মটি পূরণ করুন।</li>
+        <li>ফর্ম submit করলে WhatsApp-এ অর্ডার মেসেজ তৈরি হবে।</li>
+        <li>অর্ডার confirm হলে দ্রুত আপনার কার্ড ডেলিভারি করা হবে।</li>
+      </ul>
+    </div>
+
+    <!-- ================= Main Order Form ================= -->
+    <form class="form-wrap" onsubmit="submitOrder(event)">
+      <div class="form-group">
+        <label for="customerName">আপনার নাম (optional)</label>
+        <input type="text" id="customerName" placeholder="আপনার নাম লিখুন">
+      </div>
+
+      <div class="form-group">
+        <label for="country">আপনার দেশ *</label>
+        <select id="country" required>
+          <option value="">দেশ নির্বাচন করুন</option>
+          <option value="UAE">🇦🇪 UAE</option>
+          <option value="Qatar">🇶🇦 Qatar</option>
+          <option value="Oman">🇴🇲 Oman</option>
+          <option value="Saudi Arabia">🇸🇦 Saudi Arabia</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="package">প্যাকেজ নির্বাচন করুন *</label>
+        <select id="package" onchange="updatePrice()" required>
+          <option value="">প্যাকেজ নির্বাচন করুন</option>
+          <option value="৩ কার্ড">৩ কার্ড = ১৬৫০ টাকা</option>
+          <option value="৫ কার্ড">৫ কার্ড = ২৫৫০ টাকা</option>
+          <option value="১০ কার্ড">১০ কার্ড = ৩৫০০ টাকা</option>
+          <option value="১০ কার্ড - বিশেষ অফার">১০ কার্ড বিশেষ অফার = ৩১৫০ টাকা</option>
+          <option value="২০ কার্ড">২০ কার্ড = ৬৫০০ টাকা</option>
+          <option value="৪০ কার্ড">৪০ কার্ড = ১০৫০০ টাকা</option>
+          <option value="৫০ কার্ড">৫০ কার্ড = ১২৫০০ টাকা</option>
+        </select>
+      </div>
+
+      <div id="pricePreview" class="price-preview">প্যাকেজ নির্বাচন করলে মূল্য দেখাবে</div>
+
+      <div class="form-group">
+        <label for="last4">WhatsApp নম্বরের শেষ ৪ ডিজিট *</label>
+        <input type="text" id="last4" maxlength="4" placeholder="যেমন: 1234" required>
+      </div>
+
+      <button class="btn btn-green full-btn" type="submit">WhatsApp এ অর্ডার পাঠান</button>
+    </form>
+  </div>
+</section>
+
+<!-- ================= Footer ================= -->
+<footer class="footer">
+  <div class="container footer-grid">
+    <div>
+      <h3>Internet Card Agency <span class="verify-dot">✓</span></h3>
+      <p>বিশ্বস্ত ইন্টারনেট স্ক্র্যাচ কার্ড সার্ভিস প্রদানকারী।</p>
+    </div>
+
+    <div>
+      <h3>Quick Links</h3>
+      <a href="index.html">হোম</a>
+      <a href="recharge-card.html">কার্ড কিনুন</a>
+    </div>
+
+    <div>
+      <h3>Support</h3>
+      <a href="https://wa.me/8801540001811">WhatsApp Support</a>
+      <a href="https://www.facebook.com/share/199cBUhcGf/">Facebook Page</a>
+    </div>
+  </div>
+
+  <div class="copy">© 2026 Internet Card Agency.</div>
+</footer>
+
+<script src="assets/js/script.js"></script>
+</body>
+</html>
