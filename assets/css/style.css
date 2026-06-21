@@ -45,7 +45,77 @@ img{max-width:100%;display:block}
 .nav{height:78px;display:flex;align-items:center;justify-content:space-between;gap:18px}
 .brand{display:flex;align-items:center;gap:12px;font-weight:800;font-size:22px}
 .logo{width:50px;height:50px;border-radius:50%;object-fit:cover;background:#eef2ff}
-.verify-dot{display:inline-grid;place-items:center;background:#1683ff;color:#fff;border-radius:50%;width:19px;height:19px;font-size:12px;margin-left:4px}
+.brand-title{
+  display:inline-block;
+}
+
+.verify-badge{
+  width:30px;
+  height:30px;
+  display:inline-block;
+  position:relative;
+  flex:0 0 auto;
+  background:linear-gradient(135deg,#42b3ff,#0066ff);
+  clip-path:polygon(
+    50% 0%,
+    60% 6%,
+    72% 3%,
+    81% 12%,
+    94% 16%,
+    97% 28%,
+    100% 40%,
+    96% 50%,
+    100% 61%,
+    94% 72%,
+    97% 84%,
+    81% 88%,
+    72% 97%,
+    60% 94%,
+    50% 100%,
+    40% 94%,
+    28% 97%,
+    19% 88%,
+    3% 84%,
+    6% 72%,
+    0% 61%,
+    4% 50%,
+    0% 40%,
+    3% 28%,
+    6% 16%,
+    19% 12%,
+    28% 3%,
+    40% 6%
+  );
+  box-shadow:0 6px 18px rgba(0,102,255,.30);
+  vertical-align:middle;
+}
+
+.verify-badge::after{
+  content:"✓";
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+  font-size:20px;
+  font-weight:900;
+}
+
+.verify-badge.small{
+  width:22px;
+  height:22px;
+}
+
+.verify-badge.small::after{
+  font-size:14px;
+}
+
+.footer-title{
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
 .menu{display:flex;align-items:center;gap:18px}
 .menu a{font-weight:700;color:#1f2937}
 .menu a:hover{color:var(--blue)}
