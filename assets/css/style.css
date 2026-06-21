@@ -308,3 +308,36 @@ input,select{
   color:#fff;
   border:1px solid rgba(255,255,255,.14);
 }
+
+/* Exact image based Facebook-like verified badge */
+.fb-verify-badge{
+  width:26px;
+  height:26px;
+  object-fit:contain;
+  display:inline-block;
+  vertical-align:middle;
+  margin-left:2px;
+  transform:translateY(1px);
+}
+
+.fb-verify-badge.small{
+  width:18px;
+  height:18px;
+  margin-left:4px;
+}
+
+.brand{
+  align-items:center;
+  gap:10px;
+}
+
+.brand-title{
+  display:inline-block;
+  line-height:1;
+}
+
+.footer-title{
+  display:flex;
+  align-items:center;
+  gap:7px;
+}
